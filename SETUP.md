@@ -1,5 +1,9 @@
 ### ERRORS
 
+While building, the compiler could not find `bits/c++config.h` file. To fix that run the following command.    
+```sudo apt-get install gcc-multilib g++-multilib```
+
+
 `dlerror:/home/\<username>/X-Plane 11/Resources/plugins/XPlaneConnect/64/lin.xpl: undefined symbol: _ZN3XPC15MessageHandlers21CamCallback_RunwayCamEP20XPLMCameraPosition_tiPv`
 
 This issue is resolved by adding ```CameraCallbacks.cpp``` in the ```CMakeLists.txt``` in both the ```add_library``` commands.
