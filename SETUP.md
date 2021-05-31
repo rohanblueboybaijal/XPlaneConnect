@@ -12,4 +12,5 @@ Go to ```XPlaneConnect/xpcPlugin```
 ```cd build```  
 ```cmake ..```  
 ```cmake --build .```  
-This will create new .xpl files under a folder named ```XPlaneConnect```. Use that for XPlane.
+This will create new .xpl files under a folder named ```XPlaneConnect```. Use that for XPlane.  
+[#151](https://github.com/nasa/XPlaneConnect/issues/151)
