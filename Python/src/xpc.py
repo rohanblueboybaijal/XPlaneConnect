@@ -208,8 +208,8 @@ class XPlaneConnect(object):
             val = -998
             if i < len(values):
                 val = values[i]
-            # if i < 3:
-            #     buffer += struct.pack("d", val)
+            if i < 3:
+                buffer += struct.pack("d", val)
             else:
                 buffer += struct.pack("<f", val)
 
@@ -316,10 +316,10 @@ class XPlaneConnect(object):
                 if len(value) > 255:
                     raise ValueError("value must have less than 256 items.")
                 fmt = "<B{0:d}sB{1:d}f".format(len(dref), len(value))
-                buffer += struct.pack(fmt, len(dref), dref, len(value), value)
+                buffer += struct.pack(fmt.encode(), len(dref), dref.encode(), len(value), value)
             else:
                 fmt = "<B{0:d}sBf".format(len(dref))
-                buffer += struct.pack(fmt, len(dref), dref, 1, value)
+                buffer += struct.pack(fmt.encode(), len(dref), dref.encode(), 1, value)
 
         # Send
         self.sendUDP(buffer)
